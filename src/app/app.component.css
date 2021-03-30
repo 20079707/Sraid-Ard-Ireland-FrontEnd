@@ -1,0 +1,11 @@
+.app {
+    background-color: #F5F4F2;
+    min-height: calc(100vh - 100px);
+    padding: 50px;
+    margin: 0;
+    color: #253D5B;
+}
+
+h1 {
+    text-align: center;
+}

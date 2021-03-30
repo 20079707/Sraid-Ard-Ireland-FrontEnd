@@ -1,0 +1,4 @@
+<div class="layout">  
+<app-product-list [products] ="products" (selectProduct)= "selectProduct($event)"></app-product-list>
+<app-product-details [product] ="this.selectedProduct"></app-product-details>
+</div>
