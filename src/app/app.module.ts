@@ -13,6 +13,9 @@ import { MainModule } from './main/main.module';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'products'}
@@ -22,6 +25,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
     
   ],
   imports: [
