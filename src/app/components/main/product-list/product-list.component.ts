@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { MatGridListModule } from '@angular/material/grid-list'
 
 
 @Component({
@@ -9,12 +9,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() products = [];
+  @Input() products: any = [];
   @Output() selectProduct = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   productClicked(product: any) {
   this.selectProduct.emit(product);

@@ -7,15 +7,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 
-import { AuthModule } from './auth/auth.module';
-import { MainModule } from './main/main.module';
+import { AuthModule } from './components/auth/auth.module';
+import { MainModule } from './components/main/main.module';
 
 
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavComponent } from './shared/nav/nav.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { NavComponent } from './components/shared/nav/nav.component';
+import { ComponentsComponent } from './components/components.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'products'}
@@ -28,6 +29,7 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    ComponentsComponent,
     
   ],
   imports: [
