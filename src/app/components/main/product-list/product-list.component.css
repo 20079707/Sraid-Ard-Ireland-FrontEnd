@@ -1,0 +1,20 @@
+body {
+    background: #f8f9fa;
+    
+  }
+
+  i {
+    color: #C6878F;
+    font-size: medium;
+  }
+a{
+  color: #67697C;
+}
+
+.image {
+  padding: 16px;
+}
+
+.name {
+  font-size: large;
+}

@@ -1,7 +1,10 @@
 <div *ngIf= "product">
-    <h1>{{ product?.name }} </h1>
+    
+    <img class="bd-placeholder-img card-img-top" src="{{ product.product_image }}">
+    <h1>{{ product?.name  }} </h1>
+
     <h2>Product Details</h2>
-        <p>€ {{ product?.price }}</p>
+        <p>{{ product?.price | currency:"EUR" }}</p>
         <p>ID: {{ product?.product_code }}</p>
         <p>Description: {{ product?.product_description }}</p>
     <h2>Shop Details</h2>

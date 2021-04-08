@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { ComponentsComponent } from './components/components.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'products'}
@@ -30,6 +31,7 @@ const routes: Routes = [
     FooterComponent,
     NavComponent,
     ComponentsComponent,
+    ShoppingCartComponent,
     
   ],
   imports: [

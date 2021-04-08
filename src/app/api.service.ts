@@ -26,5 +26,10 @@ export class ApiService {
     return this.httpClient.get(this.baseUrl, {headers: this.headers});
     
   }
+  getProduct(product_code: number) {
+
+    return this.httpClient.get('${this.baseUrl}${product_code}/', {headers: this.headers});
+    
+  }
 
 }

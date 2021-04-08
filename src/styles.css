@@ -3,3 +3,13 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.update-results-btn {
+    background-color: #C6878F;
+    border: none;
+}
+
+.dropdown-toggle {
+    background-color: white;
+    border: none;
+}
