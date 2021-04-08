@@ -12,10 +12,10 @@ export class ProductItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   productClicked(product: any) {
-  this.selectProduct.emit(product);
+    this.selectProduct.emit(product);
   }
 
 }

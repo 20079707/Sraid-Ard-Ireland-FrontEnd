@@ -15,17 +15,17 @@ export class ProductListComponent implements OnInit {
     private apiService: ApiService
   ) { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.apiService.getProducts().subscribe(
-    data => {
-      this.products = data;
-    },
-    error => console.log(error)
-  );
-}
+      data => {
+        this.products = data;
+      },
+      error => console.log(error)
+    );
+  }
 
-selectProduct(product: null) {
-  this.selectedProduct = product;
-  console.log('selectedProduct', this.selectedProduct);
+  selectProduct(product: null) {
+    this.selectedProduct = product;
+    console.log('selectedProduct', this.selectedProduct);
   }
 }
