@@ -1,1 +1,30 @@
-<p>product-item works!</p>
+<div class="row">
+    <div class="container">
+        <h2 class="text-center font-weight-light mb-5">Featured products</h2>
+    </div>
+  
+      <div class="container pb-5">
+        <div class="row text-center justify-content-sm-center no-gutters">
+    
+          <div class="col-12 col-md-4" *ngFor = "let product of products" (click)= "productClicked(product)">
+            <div class="card   shadow h-100 ">
+              
+                <div class="card-img-top">
+                  <img alt="image" class="img-fluid mx-auto d-block image" src="{{ product.cover_image }}">
+                </div>
+                <div class=" card-body p-md-2 ">
+                  <h4 class="card-title">
+                  <a href="#" class=" font-weight-bold text-dark text-uppercase small"> {{ product.name }}</a>
+                </h4>
+                <p>{{ product.price | currency:"EUR" }}</p>
+                <p class="mt-4">
+                  <a href="#">View &gt;</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  

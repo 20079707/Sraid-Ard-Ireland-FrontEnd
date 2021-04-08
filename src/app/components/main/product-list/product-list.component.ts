@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MatGridListModule } from '@angular/material/grid-list'
-
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,14 +8,24 @@ import { MatGridListModule } from '@angular/material/grid-list'
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() products: any = [];
-  @Output() selectProduct = new EventEmitter();
+  products: any = [];
+  selectedProduct = null;
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {    
+    this.apiService.getProducts().subscribe(
+    data => {
+      this.products = data;
+    },
+    error => console.log(error)
+  );
+}
 
-  productClicked(product: any) {
-  this.selectProduct.emit(product);
+selectProduct(product: null) {
+  this.selectedProduct = product;
+  console.log('selectedProduct', this.selectedProduct);
   }
 }

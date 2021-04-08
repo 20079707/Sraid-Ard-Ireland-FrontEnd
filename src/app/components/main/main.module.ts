@@ -16,7 +16,7 @@ const material = [
 ]
 
 const routes: Routes = [
-  {path: 'products', component: MainComponent}
+  {path: 'products', component: ProductListComponent}
 ];
 
 @NgModule({
