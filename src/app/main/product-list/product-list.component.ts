@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ApiService } from '../../../api.service';
+import { CookieService } from 'ngx-cookie-service';
+import { ApiService } from '../../api.service';
+import { Product } from '../../models/Product';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-product-list',
@@ -8,20 +11,29 @@ import { ApiService } from '../../../api.service';
 })
 export class ProductListComponent implements OnInit {
 
-  products: any = [];
+  products: Product[] = [];
   selectedProduct = null;
 
   constructor(
-    private apiService: ApiService
+    private cookieService: CookieService,
+    private apiService: ApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.apiService.getProducts().subscribe(
+    const urToken = this.cookieService.get('ur-token')
+    if (!urToken) {
+      this.router.navigate(['/auth']);
+    } else {
+      this.apiService.getProducts().subscribe(
       data => {
         this.products = data;
       },
       error => console.log(error)
     );
+    }
+
+    
   }
 
   selectProduct(product: null) {
