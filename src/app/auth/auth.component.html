@@ -1,20 +1,34 @@
-<section class="pt-5 pb-5" style=" ">
+
   <div class="container pt-5 pb-5">
     <div class="row justify-content-center header-h100 align-items-center">
-      <div class="col-12 col-md-4 text-center">
+      <div class="col-12 col-md-5 text-center">
 
         <form class="form-signin" [formGroup]="authForm" (ngSubmit)="saveForm()">
 
           <img class="ml-md-3 mr-3 mr-md-0 order-1 img-fluid rounded  mb-4" src="https://anima-uploads.s3.amazonaws.com/projects/606c4dca1a2fdfd93b0d1057/releases/606c526d9552364b7c7f9099/img/sr-id-ard-logo@1x.png" alt="Generic placeholder image">
-          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+          
+          <label for="inputFirstName" class="sr-only">First Name</label>
+          <input *ngIf="registerMode" type="text" formControlName="firstname" font-size="[object Object]" placeholder="First Name" font-family="BrownStd-Regular" name="FirstName" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" aria-required="true">
+          
+          <label for="inputLastName" class="sr-only">Last Name</label>
+          <input *ngIf="registerMode" type="text" formControlName="lastname" font-size="[object Object]" placeholder="Last Name" font-family="BrownStd-Regular" name="LastName" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu"  aria-required="true">
+
 
           <label for="inputUsername" class="sr-only">Username</label>
-          <input type="text" formControlName="username" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus=""/>
-
+          <input type="text" formControlName="username" id="inputUsername" font-size="[object Object]" placeholder="Username" font-family="BrownStd-Regular" name="EmailSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your email address." data-validation-format="This email address is not valid. Please ensure there are no spaces or invalid characters in your email address." data-validation-registeremail="" aria-required="true">
+          
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" formControlName="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
+          <input type="password" formControlName="password" id="inputPassword" font-size="[object Object]" placeholder="Password" font-family="BrownStd-Regular" name="PasswordSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your password." data-validation-format="This password is not valid. Please ensure there are no spaces or invalid characters in your email address." data-validation-registeremail="" aria-required="true">
 
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          <button type="submit" name="login" width="100%" class="eexz8h-1 kbFGkD">
+            <span *ngIf="!registerMode" font-size="[object Object]" font-family="BrownStd-Regular" letter-spacing="1px" display="flex" class="sc-bdVaJa sc-htpNat sc-1i5h52x-0 lgWUVA">LOG IN</span>
+            <span *ngIf="registerMode" font-size="[object Object]" font-family="BrownStd-Regular" letter-spacing="1px" display="flex" class="sc-bdVaJa sc-htpNat sc-1i5h52x-0 lgWUVA">REGISTER</span>
+          </button>
+          
+          
+          <a *ngIf="!registerMode" class="mt-6 mb-3 register-button btn-flat" data-capturescreen="traditionalRegistration" (click)="registerMode = true">No account? Register here</a>
+          <a *ngIf="registerMode" class="mt-6 mb-3 register-button btn-flat" data-capturescreen="traditionalRegistration" (click)="registerMode = false">Have an account? Login here</a>
 
           <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
 
@@ -22,4 +36,3 @@
       </div>
     </div>
   </div>
-</section>

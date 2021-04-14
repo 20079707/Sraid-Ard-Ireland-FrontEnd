@@ -39,6 +39,11 @@ export class ApiService {
     return this.httpClient.post(`${this.baseUrl}auth/`, body, {headers: this.headers});
   }
 
+  registerUser(authData: any) {
+    const body = JSON.stringify(authData);
+    return this.httpClient.post(`${this.baseUrl}app/users/`, body, {headers: this.headers});
+  }
+
   getAuthHeaders() {
     const token = this.cookieService.get('ur-token')
     return new HttpHeaders({

@@ -16,9 +16,12 @@ interface TokenObj {
 export class AuthComponent implements OnInit {
 
   authForm = new FormGroup({
+
     username: new FormControl(''),
     password: new FormControl('')
-  })
+  });
+
+  registerMode = false;
 
   constructor(
     private apiService: ApiService,
@@ -34,13 +37,25 @@ export class AuthComponent implements OnInit {
   }
 
   saveForm() {
-    this.apiService.loginUser(this.authForm.value).subscribe(
-      (result: any) => {
-        this.router.navigate(['/products']);
-        this.cookieService.set("ur-token", result.token);
-      },
-      error => console.log(error)
-    );
+    if (!this.registerMode) {
+      this.loginUser();
+    } else {
+      this.apiService.registerUser(this.authForm.value).subscribe(
+        (result: any) => {
+          this.loginUser();
+        },
+        error => console.log(error)
+      );
+    }
   }
 
+loginUser() {
+  this.apiService.loginUser(this.authForm.value).subscribe(
+    (result: any) => {
+      this.router.navigate(['/products']);
+      this.cookieService.set("ur-token", result.token);
+    },
+    error => console.log(error)
+  );
+}
 }

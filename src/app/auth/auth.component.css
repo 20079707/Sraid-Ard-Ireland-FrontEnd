@@ -1,0 +1,59 @@
+.register-button{
+    padding: 8px 0;
+    width: 380px;
+    font-size: 16px;
+    border-radius: 22px;
+    color: #C6878F;
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.btn-flat {
+    background-color: transparent;
+    border: solid 1px #C6878F;
+    font-weight: inherit;
+    height: auto;
+    line-height: inherit;
+    text-align: center;
+    outline: 0px none !important;
+}
+
+button {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+.kbFGkD {
+    display: inline-block;
+    padding: 0.9375rem 3.125rem;
+    box-shadow: 0;
+    background: #C6878F;
+    border: 1px solid #C6878F;
+    color: #FFF;
+    -webkit-transition: background ease-in 0.2s, color ease-in 0.2s;
+    transition: background ease-in 0.2s, color ease-in 0.2s;
+    width: 100%;
+}
+
+.gtdCck {
+    border: 1px solid transparent;
+    outline: none;
+    -webkit-transition: border 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out;
+    width: 100%;
+    padding: 0.9375rem;
+    color: #455255;
+    border-color: #F0F0F0;
+}
+
+.eiTnBu {
+    box-sizing: border-box;
+    font-family: BrownStd-Regular;
+    line-height: 1.42;
+    font-size: 1.2rem;
+
+}
+
+
+  
