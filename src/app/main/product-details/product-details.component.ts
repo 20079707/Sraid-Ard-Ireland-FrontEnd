@@ -9,6 +9,8 @@ import { Product } from '../../models/Product';
 })
 export class ProductDetailsComponent implements OnInit {
 
+  selectedProduct = null;
+
   @Input()
   product: any;
   @Output() updateProduct = new EventEmitter();
@@ -27,6 +29,11 @@ export class ProductDetailsComponent implements OnInit {
       },
       error => console.log(error)
     );
+  }
+
+  selectProduct(product: null) {
+    this.selectedProduct = product;
+    console.log('selectedProduct', this.selectedProduct);
   }
 
 }

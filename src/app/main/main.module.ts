@@ -12,7 +12,8 @@ import { ProductItemComponent } from './product-list/product-item/product-item.c
 
 
 const routes: Routes = [
-  {path: 'products', component: ProductListComponent}
+  {path: 'products', component: ProductListComponent},
+  {path: 'productdetails', component: ProductDetailsComponent}
 ];
 
 @NgModule({
@@ -23,7 +24,6 @@ const routes: Routes = [
     FilterComponent,
     CartComponent,
     ProductItemComponent,
-
   ],
   imports: [
     CommonModule,
@@ -31,7 +31,6 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-
   ],
   providers: [
     ApiService

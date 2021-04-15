@@ -9,9 +9,8 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
+import { AppRoutingModule } from './app-routing.module';
 
-
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -19,9 +18,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavComponent } from './shared/nav/nav.component';
 
-const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'products'}
-];
+
 
 
 @NgModule({
@@ -40,13 +37,13 @@ const routes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     FlexLayoutModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule,
   ],
   exports: [
-    RouterModule,
     MatToolbarModule,
     MatSidenavModule,
     FlexLayoutModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
