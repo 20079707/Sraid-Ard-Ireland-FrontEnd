@@ -32,7 +32,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     const urToken = this.cookieService.get('ur-token')
     if (urToken) {
-      this.router.navigate(['/products']);
+      this.router.navigate(['main/home']);
     }
   }
 
@@ -52,7 +52,7 @@ export class AuthComponent implements OnInit {
 loginUser() {
   this.apiService.loginUser(this.authForm.value).subscribe(
     (result: any) => {
-      this.router.navigate(['/products']);
+      this.router.navigate(['main/home']);
       this.cookieService.set("ur-token", result.token);
     },
     error => console.log(error)

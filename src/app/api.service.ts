@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Product } from './models/Product';
 import { CookieService } from 'ngx-cookie-service';
+import { Category } from './models/Category';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ApiService {
 
   baseUrl = 'http://127.0.0.1:8000/';
   baseProductUrl = `${this.baseUrl}app/products/`
+  baseCategoryUrl = `${this.baseUrl}app/categories/`
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });
@@ -28,9 +30,22 @@ export class ApiService {
     return this.httpClient.get<Product[]>(this.baseProductUrl, {headers: this.getAuthHeaders()});
     
   }
+
+  getCategories() {
+
+    return this.httpClient.get<Category[]>(this.baseCategoryUrl, {headers: this.getAuthHeaders()});
+    
+  }
+
   getProduct(product_code: number) {
 
     return this.httpClient.get<Product[]>(`${this.baseProductUrl}${product_code}/`, {headers: this.getAuthHeaders()});
+    
+  }
+
+  getCategory(id: number) {
+
+    return this.httpClient.get<Category[]>(`${this.baseCategoryUrl}${id}/`, {headers: this.getAuthHeaders()});
     
   }
 
