@@ -8,10 +8,8 @@ import { Product } from 'src/app/models/Product';
 })
 export class HomeItemComponent implements OnInit {
 
-  
-  @Input() 
-  products: Product[] = [];
-  @Output() selectProduct = new EventEmitter();
+  @Input() productItem!: Product;
+  @Input() productItem2!: Product;
 
   constructor() { }
 

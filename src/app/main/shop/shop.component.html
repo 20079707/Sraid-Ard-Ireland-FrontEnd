@@ -1,1 +1,9 @@
-<p>shop works!</p>
+<section class="pt-5 pb-5">
+    <div class="container cards cards-hover">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4  m-0 p-0" *ngFor="let shop of shops" >
+            <app-shop-item [shopItem]="shop"></app-shop-item>
+        </div>
+      </div>
+    </div>
+  </section>

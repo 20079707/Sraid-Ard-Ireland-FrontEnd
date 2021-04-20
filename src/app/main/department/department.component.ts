@@ -12,7 +12,7 @@ import { Category } from '../../models/Category';
 export class DepartmentComponent implements OnInit {
 
   categories: Category[] = [];
-  selectedDepartment?: Category;
+  selectedCategory?: Category;
 
   constructor(
     private cookieService: CookieService,
@@ -20,12 +20,7 @@ export class DepartmentComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-
     this.getCategories()
-  }
-
-  onSelect(department: Category): void {
-    this.selectedDepartment = department;
   }
 
   getCategories(): void {

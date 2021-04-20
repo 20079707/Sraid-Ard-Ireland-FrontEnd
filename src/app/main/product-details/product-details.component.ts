@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { Product } from '../../models/Product';
 
@@ -9,31 +10,31 @@ import { Product } from '../../models/Product';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  selectedProduct = null;
-
-  @Input()
-  product: any;
-  @Output() updateProduct = new EventEmitter();
+  product!: Product;
   
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+
   ) { }
 
   ngOnInit(): void {
+    this.getProduct()
   }
 
   getDetails() {
     this.apiService.getProduct(this.product.product_code).subscribe(
       product => {
-        this.updateProduct.emit(product);
+        this.product = product;
       },
       error => console.log(error)
     );
-  }
 
-  selectProduct(product: null) {
-    this.selectedProduct = product;
-    console.log('selectedProduct', this.selectedProduct);
-  }
+    }
 
+    getProduct(): void {
+      const product_code = Number(this.route.snapshot.paramMap.get('product_code'));
+      this.apiService.getProduct(product_code)
+        .subscribe(product => this.product = product);
+    }
 }

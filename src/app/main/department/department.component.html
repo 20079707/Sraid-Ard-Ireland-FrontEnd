@@ -1,9 +1,9 @@
 <section class="pt-5 pb-5">
     <div class="container cards cards-hover">
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-4  m-0 p-0" *ngFor="let category of categories" routerLink="department-details/{{ category.id }}">
-            <app-department-item [categoryItem]="category"></app-department-item>
+        <div class="col-12 col-sm-6 col-md-4  m-0 p-0" *ngFor="let category of categories">
+            <app-department-item [categoryItem]="category" routerLink="details/{{ category.id }}"></app-department-item>
         </div>
       </div>
-    </div>
+  </div>
   </section>

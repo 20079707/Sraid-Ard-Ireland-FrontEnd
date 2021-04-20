@@ -1,18 +1,11 @@
-<div class="row text-center justify-content-sm-center no-gutters">
-  <div class="col-12 col-md-2" *ngFor="let product of products" (click)="productClicked(product)">
-    <div class="card shadow card-default  text-center h-100">
-      <div class="card-img-top">
-        <img alt="image" class="img-fluid mx-auto d-block image" src="{{ product.product_image }}">
-      </div>
-      <div class=" card-body p-md-2 ">
-        <h4 class="card-title">
-          <a href="#" class=" font-weight-bold text-dark text-uppercase small"> {{ product.name }}</a>
-        </h4>
-        <p>{{ product.price | currency:"EUR" }}</p>
-        <p class="mt-4">
-          <a href="#">View &gt;</a>
-        </p>
-      </div>
-    </div>
+<div class="card shadow card-default  text-center h-100">
+  <div class="card-img-top">
+    <img alt="image" class="img-fluid mx-auto d-block image" src="{{ productItem.product_image }}">
+  </div>
+  <div class=" card-body p-md-2 ">
+    <h4 class="card-title">
+      <a href="javascript:void(0)" class=" font-weight-bold text-dark text-uppercase small"> {{ productItem.name }}</a>
+    </h4>
+    <p>{{ productItem.price | currency:"EUR" }}</p>
   </div>
 </div>

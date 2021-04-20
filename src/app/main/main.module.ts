@@ -19,17 +19,12 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartmentItemComponent } from './department/department-item/department-item.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
-
-
-
-
+import { DepartmentDetailsComponent } from './department-details/department-details.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 const routes: Routes = [
-  {path: '', redirectTo: 'products', pathMatch: 'full'},
-  {path: 'productdetails/:product_code', component: ProductDetailsComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'department', component: DepartmentComponent},
-  {path: 'home', component: HomeComponent}
+  { path: 'department', component: DepartmentComponent },
+  { path: 'shop', component: ShopComponent },
 ];
 
 @NgModule({
@@ -50,12 +45,14 @@ const routes: Routes = [
     DepartmentItemComponent,
     ShopComponent,
     ShopItemComponent,
+    DepartmentDetailsComponent,
 
-    
+
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
   ],
   exports: [
     RouterModule,

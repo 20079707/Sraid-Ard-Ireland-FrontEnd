@@ -8,14 +8,7 @@ import { Product } from '../models/Product';
 })
 export class MainComponent implements OnInit {
 
-  @Input() products: Product[] = [];
-  @Output() selectProduct = new EventEmitter();
-
   constructor() { }
 
   ngOnInit(): void {}
-  
-  productClicked(product: Product) {
-      this.selectProduct.emit(product);
-    }
 }

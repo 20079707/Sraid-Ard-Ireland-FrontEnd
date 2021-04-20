@@ -8,7 +8,7 @@ import { Product } from '../../../models/Product';
 })
 export class ProductItemComponent implements OnInit {
 
-  @Input() products: Product[] = [];
+  @Input() productItem!: Product;
   @Output() selectProduct = new EventEmitter();
 
   constructor() { }

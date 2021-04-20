@@ -13,7 +13,8 @@ import { Product } from 'src/app/models/Product';
 })
 export class HomeComponent implements OnInit {
 
-  productList: Product[] = [];
+  productList1: Product[] = [];
+
   selectedProduct = null;
 
   constructor(
@@ -24,22 +25,23 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.getProducts1
+    
+  }
+
+  getProducts1(): void {
     const urToken = this.cookieService.get('ur-token')
     if (!urToken) {
       this.router.navigate(['/auth']);
     } else {
       this.apiService.getProducts().subscribe(
-      data => {
-        this.productList = data;
-      },
-      error => console.log(error)
-    );
+        data1 => {
+          this.productList1 = data1;
+        },
+        error => console.log(error)
+      );
     }
-
   }
 
-  selectProduct(product: null) {
-    this.selectedProduct = product;
-    console.log('selectedProduct', this.selectedProduct);
-  }
+  
 }

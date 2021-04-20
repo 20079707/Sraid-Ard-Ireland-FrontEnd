@@ -10,15 +10,10 @@ import { Category } from '../../../models/Category';
 export class DepartmentItemComponent implements OnInit {
 
   @Input() categoryItem!: Category
-  @Output() selectCategory = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  categoryClicked(categoryItem: Category) {
-    this.selectCategory.emit(categoryItem);
   }
 
 }

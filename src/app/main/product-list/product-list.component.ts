@@ -12,8 +12,8 @@ import { Category } from '../../models/Category';
 })
 export class ProductListComponent implements OnInit {
 
-  productList: Product[] = [];
-  selectedProduct = null;
+  products: Product[] = [];
+  selectedProduct?: Product;
 
   constructor(
     private cookieService: CookieService,
@@ -22,23 +22,24 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getProducts()
+  }
 
+  getProducts(): void {
     const urToken = this.cookieService.get('ur-token')
     if (!urToken) {
       this.router.navigate(['/auth']);
     } else {
       this.apiService.getProducts().subscribe(
       data => {
-        this.productList = data;
+        this.products = data;
       },
       error => console.log(error)
     );
     }
-
-    
   }
 
-  selectProduct(product: null) {
+  selectProduct(product: Product) {
     this.selectedProduct = product;
     console.log('selectedProduct', this.selectedProduct);
   }
