@@ -8,7 +8,7 @@ import { ApiService } from '../api.service';
 import { FilterComponent } from './filter/filter.component';
 import { CartComponent } from './cart/cart.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ProductItemComponent } from './product-list/product-item/product-item.component'
+import { ProductItemComponent } from './product-item/product-item.component'
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavComponent } from './shared/nav/nav.component';
@@ -20,7 +20,9 @@ import { DepartmentItemComponent } from './department/department-item/department
 import { ShopComponent } from './shop/shop.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 import { DepartmentDetailsComponent } from './department-details/department-details.component';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { ShopDetailsComponent } from './shop-details/shop-details.component';
+import { DashboardComponent } from './dashboard/dashboard.component'; // <-- NgModel lives here
 
 const routes: Routes = [
   { path: 'department', component: DepartmentComponent },
@@ -46,6 +48,8 @@ const routes: Routes = [
     ShopComponent,
     ShopItemComponent,
     DepartmentDetailsComponent,
+    ShopDetailsComponent,
+    DashboardComponent,
 
 
   ],

@@ -1,24 +1,26 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/Product';
 import { CookieService } from 'ngx-cookie-service';
-import { ApiService } from '../../api.service';
-import { Product } from '../../models/Product';
 import { Router } from '@angular/router';
+import { ApiService } from '../../api.service';
 import { Category } from '../../models/Category';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
-  products: Product[] = [];
-  selectedProduct?: Product;
+  products: Product[] =[]
+  category!: Category
+
+
 
   constructor(
     private cookieService: CookieService,
-    private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
@@ -38,10 +40,5 @@ export class ProductListComponent implements OnInit {
       error => console.log(error)
     );
     }
-  }
-
-  selectProduct(product: Product) {
-    this.selectedProduct = product;
-    console.log('selectedProduct', this.selectedProduct);
   }
 }

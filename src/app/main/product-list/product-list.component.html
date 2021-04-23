@@ -10,7 +10,7 @@
 
     <div class="row text-center justify-content-sm-center no-gutters">
       <div class="col-12 col-md-2" *ngFor="let product of products"
-        routerLink="productdetails/{{ product.product_code }}">
+        routerLink="details/{{ product.product_code }}">
         <app-product-item [productItem]="product"></app-product-item>
       </div>
     </div>

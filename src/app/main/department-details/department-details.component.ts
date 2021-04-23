@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { ApiService } from '../../api.service';
+import { Product } from 'src/app/models/Product';
 
 @Component({
   selector: 'app-department-details',

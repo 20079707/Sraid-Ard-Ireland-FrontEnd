@@ -1,4 +1,5 @@
 import { Shop } from './Shop'
+import { Category } from './Category';
 
 export interface Product {
     product_code: number;
@@ -7,7 +8,7 @@ export interface Product {
     product_description: string;
     colour: string;
     stock: string;
-    category: number;
+    category: Number[];
     shipping_fee: string;
     product_image: string;
     cover_image: string;

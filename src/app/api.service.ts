@@ -59,9 +59,10 @@ export class ApiService {
     
   }
 
-  getShop(business_reg: number) {
+  getShop(business_reg: string): Observable<Shop> {
+    const url = `${this.baseShopUrl}${business_reg}/`;
 
-    return this.httpClient.get<Shop>(`${this.baseShopUrl}${business_reg}/`, {headers: this.getAuthHeaders()});
+    return this.httpClient.get<Shop>(url, {headers: this.getAuthHeaders()});
     
   }
   
@@ -75,7 +76,7 @@ export class ApiService {
 
   registerUser(authData: any) {
     const body = JSON.stringify(authData);
-    return this.httpClient.post(`${this.baseUrl}app/users/`, body, {headers: this.headers});
+    return this.httpClient.post(`${this.baseUrl}user/users/`, body, {headers: this.headers});
   }
 
   getAuthHeaders() {

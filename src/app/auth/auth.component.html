@@ -9,15 +9,18 @@
           <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
           
           <label for="inputFirstName" class="sr-only">First Name</label>
-          <input *ngIf="registerMode" type="text" formControlName="firstname" font-size="[object Object]" placeholder="First Name" font-family="BrownStd-Regular" name="FirstName" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" aria-required="true">
+          <input *ngIf="registerMode" type="text" formControlName="first_name" font-size="[object Object]" placeholder="First Name" font-family="BrownStd-Regular" name="FirstName" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" aria-required="true">
           
           <label for="inputLastName" class="sr-only">Last Name</label>
-          <input *ngIf="registerMode" type="text" formControlName="lastname" font-size="[object Object]" placeholder="Last Name" font-family="BrownStd-Regular" name="LastName" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu"  aria-required="true">
+          <input *ngIf="registerMode" type="text" formControlName="last_name" font-size="[object Object]" placeholder="Last Name" font-family="BrownStd-Regular" name="LastName" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu"  aria-required="true">
 
 
           <label for="inputUsername" class="sr-only">Username</label>
-          <input type="text" formControlName="username" id="inputUsername" font-size="[object Object]" placeholder="Username" font-family="BrownStd-Regular" name="EmailSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your email address." data-validation-format="This email address is not valid. Please ensure there are no spaces or invalid characters in your email address." data-validation-registeremail="" aria-required="true">
+          <input type="text" formControlName="username" id="inputUsername" font-size="[object Object]" placeholder="Username" font-family="BrownStd-Regular" name="UsernameSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your username." data-validation-format="This username is not valid. Please ensure there are no spaces or invalid characters in your username." data-validation-registeremail="" aria-required="true">
           
+          <label for="inputEmail" class="sr-only">Email</label>
+          <input *ngIf="registerMode" type="email" formControlName="email" id="inputEmail" font-size="[object Object]" placeholder="Email" font-family="BrownStd-Regular" name="EmailSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your email address." data-validation-format="This email address is not valid. Please ensure there are no spaces or invalid characters in your email address." data-validation-registeremail="" aria-required="true">
+
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" formControlName="password" id="inputPassword" font-size="[object Object]" placeholder="Password" font-family="BrownStd-Regular" name="PasswordSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your password." data-validation-format="This password is not valid. Please ensure there are no spaces or invalid characters in your email address." data-validation-registeremail="" aria-required="true">
 

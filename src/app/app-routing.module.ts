@@ -8,6 +8,8 @@ import { MainComponent } from './main/main.component';
 import { ProductDetailsComponent } from './main/product-details';
 import { ProductListComponent } from './main/product-list/product-list.component';
 import { ShopComponent } from './main/shop/shop.component';
+import { ShopDetailsComponent } from './main/shop-details/shop-details.component';
+import { DashboardComponent } from './main/dashboard/dashboard.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'main/home' },
@@ -18,10 +20,12 @@ const routes: Routes = [
             {path: 'home', component: HomeComponent},
             {path: 'products', component: ProductListComponent},
             {path: 'department', component: DepartmentComponent},
+            {path: 'dashboard', component: DashboardComponent},
             {path: 'shop', component: ShopComponent},
             {path: 'cart', component: CartComponent},
-            {path: 'products/productdetails/:product_code', component: ProductDetailsComponent},
+            {path: 'products/details/:product_code', component: ProductDetailsComponent},
             {path: 'department/details/:id', component: DepartmentDetailsComponent},
+            {path: 'shop/details/:business_reg', component: ShopDetailsComponent},
             
         ],
     },

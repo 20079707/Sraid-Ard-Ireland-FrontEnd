@@ -13,7 +13,7 @@ import { Product } from 'src/app/models/Product';
 })
 export class HomeComponent implements OnInit {
 
-  productList1: Product[] = [];
+
 
   selectedProduct = null;
 
@@ -23,25 +23,7 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-
-    this.getProducts1
-    
-  }
-
-  getProducts1(): void {
-    const urToken = this.cookieService.get('ur-token')
-    if (!urToken) {
-      this.router.navigate(['/auth']);
-    } else {
-      this.apiService.getProducts().subscribe(
-        data1 => {
-          this.productList1 = data1;
-        },
-        error => console.log(error)
-      );
-    }
-  }
+  ngOnInit(): void {}
 
   
 }

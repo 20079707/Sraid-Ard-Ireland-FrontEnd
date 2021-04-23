@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="courses-container" *ngFor="let product of products">
+        <div class="course">
+            <img class="img-fluid image" src="{{product.product_image}}" >
+            <div class="course-info">
+                <h6>{{product.category}}</h6>
+                <h2>Callbacks & Closures</h2>
+                <button class="btn">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>

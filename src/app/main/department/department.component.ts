@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/api.service';
 import { Category } from '../../models/Category';
+import { Product } from '../../models/Product';
 
 @Component({
   selector: 'app-department',
@@ -12,7 +13,6 @@ import { Category } from '../../models/Category';
 export class DepartmentComponent implements OnInit {
 
   categories: Category[] = [];
-  selectedCategory?: Category;
 
   constructor(
     private cookieService: CookieService,

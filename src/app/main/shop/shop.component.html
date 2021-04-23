@@ -2,7 +2,7 @@
     <div class="container cards cards-hover">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4  m-0 p-0" *ngFor="let shop of shops" >
-            <app-shop-item [shopItem]="shop"></app-shop-item>
+            <app-shop-item [shopItem]="shop" routerLink="details/{{ shop.business_reg }}"></app-shop-item>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ export interface Shop{
     shop_name: string;
     slogan: string;
     address: Address;
-    business_reg: number;
+    business_reg: string;
     shop_image: string;
     logo: string;
 };

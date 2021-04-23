@@ -24,24 +24,28 @@
       <!-- card right -->
       <div class = "product-content">
         <h2 class = "product-title">{{ product.name }}</h2>
-        <a href = "#" class = "product-link">visit store</a>
+        
         <div class = "product-rating">
-          <i class = "far fa-star"></i>
-          <i class = "far fa-star"></i>
-          <i class = "far fa-star"></i>
-          <i class = "far fa-star"></i>
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star"></i>
           <i class = "fas fa-star-half-alt"></i>
           <span>4.7(21)</span>
         </div>
 
         <div class = "product-price">
-          <p class = "new-price">Price: <span>{{ product.price | currency:"EUR" }}</span></p>
+          <p>{{ product.price | currency:"EUR" }}</p>
         </div>
 
-        <div class = "product-detail">
-          <h2>about this item: </h2>
-          <p>{{ product.product_description }}</p>
-          
+        
+        <h5 class="mt-4 text-left">Description</h5>
+
+          <div class = "description">
+            <p>{{ product.product_description }}</p>
+          </div>
+
+          <div class = "product-detail">
           <ul>
             <li>Color: <span>{{ product.colour }}</span></li>
             <li>Available: <span>{{ product.stock }}</span></li>
@@ -80,4 +84,6 @@
       </div>
     </div>
   </div>
+
+  
 
