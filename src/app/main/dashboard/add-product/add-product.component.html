@@ -1,0 +1,51 @@
+<form [formGroup]="productForm">
+
+    <label>Product Name</label><br>
+    <input type="text" formControlName="name"><br>
+
+    <label>Price</label><br>
+    <input type="text" formControlName="price"/><br>
+
+    <label>Description</label><br>
+    <textarea type="text" formControlName="product_description"></textarea><br>
+
+    <label>Quantity of Products</label><br>
+    <input type="text" formControlName="quantity"/><br>
+
+    <label>Colour of Product</label><br>
+    <select formControlName="colour">
+        <option value="" disabled>Choose a Colour</option>
+        <option *ngFor="let colour of colours" [ngValue]="colour">
+          {{ colour }}
+        </option>
+    </select><br>
+
+    <label>Stock Availability</label><br>
+    <select formControlName="stock">
+        <option value="" disabled>Stock Availability</option>
+        <option *ngFor="let stock of stock" [ngValue]="stock">
+          {{ stock }}
+        </option>
+    </select><br>
+
+    <label>Shipping Fee Price</label><br>
+    <input type="text" formControlName="shipping_fee"/><br>
+
+    <label>Weight (kg)</label><br>
+    <input type="text" formControlName="weight"/><br>
+
+    <label>Shop</label><br>
+    <input type="text" formControlName="shop"/><br>
+
+    <label>Category</label><br>
+    <select formControlName="category">
+        <option value="" disabled>Choose a Category</option>
+        <option *ngFor="let category of categories" [ngValue]="category">
+          {{ category }}
+        </option>
+    </select><br>
+</form>
+
+
+<button type="submit" (click)="addProduct()">Add</button>
+<button (click)="goBack()">go back</button>

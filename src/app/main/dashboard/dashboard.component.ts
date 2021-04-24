@@ -13,7 +13,7 @@ import { Category } from '../../models/Category';
 export class DashboardComponent implements OnInit {
 
   products: Product[] =[]
-  category!: Category
+
 
 
 
@@ -40,5 +40,12 @@ export class DashboardComponent implements OnInit {
       error => console.log(error)
     );
     }
+  }
+
+  
+
+  delete(product: Product): void {
+    this.products = this.products.filter(h => h !== product);
+    this.apiService.deleteProduct(product.product_code).subscribe();
   }
 }

@@ -21,31 +21,61 @@ export class ApiService {
     'Content-Type': 'application/json',
   });
 
-
+  
 
   constructor(
     private httpClient: HttpClient,
     private cookieService: CookieService,
   ) { }
 
+  /* Product CRUD */
+
+  /* ADD: add a product to the server */
+  
+
+  addProduct(product: Product) { 
+    const productUrl = `${this.baseProductUrl}` 
+    return this.httpClient.post<Product>(productUrl, product, {headers: this.getAuthHeaders()}) 
+  }
+
+  // DELETE: delete the product from the server 
+  deleteProduct(product_code: number): Observable<Product> {
+
+    const productUrl = `${this.baseProductUrl}${product_code}/`
+    return this.httpClient.delete<Product>(productUrl, {headers: this.getAuthHeaders()})
+
+  }
+
+  // PUT: update the product on the server 
+  updateProduct(product_code: Product, product: Product): Observable<any> {
+
+    const productUrl = `${this.baseProductUrl}${product_code}/`
+    return this.httpClient.put<Product>(productUrl, product, {headers: this.getAuthHeaders()})
+
+  }
+
+  // GET: get all products from the server 
   getProducts() {
 
     return this.httpClient.get<Product[]>(this.baseProductUrl, {headers: this.getAuthHeaders()});
     
   }
 
+  // GET: get one product from the server 
   getProduct(product_code: number): Observable<Product> {
     const productUrl = `${this.baseProductUrl}${product_code}/`
     return this.httpClient.get<Product>(productUrl, {headers: this.getAuthHeaders()});
     
   }
 
+  // GET: get all categories from the server 
   getCategories() {
 
     return this.httpClient.get<Category[]>(this.baseCategoryUrl, {headers: this.getAuthHeaders()});
     
   }
 
+  // GET: get one category from the server 
   getCategory(id: number): Observable<Category> {
     const url = `${this.baseCategoryUrl}${id}/`;
 
@@ -53,18 +83,22 @@ export class ApiService {
     
   }
 
+  // GET: get all shops from the server 
   getShops() {
 
     return this.httpClient.get<Shop[]>(this.baseShopUrl, {headers: this.getAuthHeaders()});
     
   }
 
+  // GET: get one shop from the server 
   getShop(business_reg: string): Observable<Shop> {
     const url = `${this.baseShopUrl}${business_reg}/`;
 
     return this.httpClient.get<Shop>(url, {headers: this.getAuthHeaders()});
     
   }
+
+  
   
 
   

@@ -6,9 +6,11 @@ export interface Product {
     name: string;
     price: string;
     product_description: string;
+    quantity: number;
     colour: string;
-    stock: string;
-    category: Number[];
+    stock: number;
+    category: string;
+    weight: string;
     shipping_fee: string;
     product_image: string;
     cover_image: string;

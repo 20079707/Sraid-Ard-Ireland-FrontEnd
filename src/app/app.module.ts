@@ -9,6 +9,8 @@ import { MainModule } from './main/main.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AuthModule,
     HttpClientModule,
     MainModule,
@@ -25,6 +28,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MatSidenavModule,
     FlexLayoutModule,
     AppRoutingModule,
+    
 
   ],
   exports: [

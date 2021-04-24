@@ -22,9 +22,9 @@ export class ProductDetailsComponent implements OnInit {
     this.getProduct()
   }
 
-    getProduct(): void {
-      const product_code = Number(this.route.snapshot.paramMap.get('product_code'));
-      this.apiService.getProduct(product_code)
-        .subscribe(product => this.product = product);
-    }
+  getProduct(): void {
+    const product_code = Number(this.route.snapshot.paramMap.get('product_code'));
+    this.apiService.getProduct(product_code)
+      .subscribe(product => this.product = product);
+  }
 }

@@ -22,11 +22,16 @@ import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 import { DepartmentDetailsComponent } from './department-details/department-details.component';
 import { FormsModule } from '@angular/forms';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
-import { DashboardComponent } from './dashboard/dashboard.component'; // <-- NgModel lives here
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddProductComponent } from './dashboard/add-product/add-product.component';
+import { EditProductComponent } from './dashboard/edit-product/edit-product.component';
 
 const routes: Routes = [
   { path: 'department', component: DepartmentComponent },
   { path: 'shop', component: ShopComponent },
+  
+  
 ];
 
 @NgModule({
@@ -50,12 +55,15 @@ const routes: Routes = [
     DepartmentDetailsComponent,
     ShopDetailsComponent,
     DashboardComponent,
+    AddProductComponent,
+    EditProductComponent,
 
 
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule,
     FormsModule,
   ],
   exports: [

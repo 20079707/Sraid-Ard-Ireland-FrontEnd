@@ -1,0 +1,38 @@
+<div *ngIf="product">
+    <label>Product Name</label><br>
+    <input id="product-name" [(ngModel)]="product.name" placeholder="name"><br>
+
+    <label>Price</label><br>
+    <input id="product-price" [(ngModel)]="product.price" placeholder="price"><br>
+
+    <label>Description</label><br>
+    <input id="product-description" [(ngModel)]="product.product_description" placeholder="description"><br>
+
+    <label>Quantity of Products</label><br>
+    <input id="product-quantity" [(ngModel)]="product.quantity" placeholder="quantity"><br>
+
+    <label>Colour of Product</label><br>
+    <input id="product-colour" [(ngModel)]="product.colour" placeholder="colour"><br>
+
+    <label>Stock Availability</label><br>
+    <input id="product-stock" [(ngModel)]="product.stock" placeholder="stock"><br>
+
+    <label>Shipping Fee Price</label><br>
+    <input id="product-shipping_fee" [(ngModel)]="product.shipping_fee" placeholder="shipping_fee"><br>
+
+    <label>Weight (kg)</label><br>
+    <input id="product-weight" [(ngModel)]="product.weight" placeholder="weight"><br>
+
+    <label>Shop</label><br>
+    <input id="product-shop" [(ngModel)]="product.shop" placeholder="shop"><br>
+
+    <label>Category</label><br>
+    <input id="product-category" [(ngModel)]="product.category" placeholder="category"><br>
+    
+</div>
+<button type="submit" (click)="saveProduct()">Save Changes</button>
+<button (click)="goBack()">Go Back</button>
+
+
+
+   
