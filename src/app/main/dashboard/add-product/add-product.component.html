@@ -1,51 +1,149 @@
-<form [formGroup]="productForm">
 
-    <label>Product Name</label><br>
-    <input type="text" formControlName="name"><br>
+<button (click)="goBack()"><i class="fas fa-angle-left"></i> Go Back</button>
 
-    <label>Price</label><br>
-    <input type="text" formControlName="price"/><br>
+<div class="container tm-mt-big tm-mb-big">
+  <div class="row">
+    <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+      <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
 
-    <label>Description</label><br>
-    <textarea type="text" formControlName="product_description"></textarea><br>
+        <div class="row">
+          <div class="col-12">
+            <h2 class="tm-block-title d-inline-block">Add Product</h2>
+          </div>
+        </div>
 
-    <label>Quantity of Products</label><br>
-    <input type="text" formControlName="quantity"/><br>
+        
+      <form [formGroup]="productForm" class="tm-edit-product-form">
+        <div class="row tm-edit-product-row">
 
-    <label>Colour of Product</label><br>
-    <select formControlName="colour">
-        <option value="" disabled>Choose a Colour</option>
-        <option *ngFor="let colour of colours" [ngValue]="colour">
-          {{ colour }}
-        </option>
-    </select><br>
+          <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+            <img [src]="imageURL" style="width: 300px; height: 200px">
 
-    <label>Stock Availability</label><br>
-    <select formControlName="stock">
-        <option value="" disabled>Stock Availability</option>
-        <option *ngFor="let stock of stock" [ngValue]="stock">
-          {{ stock }}
-        </option>
-    </select><br>
+            <div class="custom-file mt-3 mb-3">
 
-    <label>Shipping Fee Price</label><br>
-    <input type="text" formControlName="shipping_fee"/><br>
-
-    <label>Weight (kg)</label><br>
-    <input type="text" formControlName="weight"/><br>
-
-    <label>Shop</label><br>
-    <input type="text" formControlName="shop"/><br>
-
-    <label>Category</label><br>
-    <select formControlName="category">
-        <option value="" disabled>Choose a Category</option>
-        <option *ngFor="let category of categories" [ngValue]="category">
-          {{ category }}
-        </option>
-    </select><br>
-</form>
+              <input id="fileInput" type="file" style="display:none;" (change)="uploadDocument($event)" accept=".png, .pdf, .jpg, .jpeg">
+              <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
+                onclick="document.getElementById('fileInput').click();" >
+                
+            </div>
 
 
-<button type="submit" (click)="addProduct()">Add</button>
-<button (click)="goBack()">go back</button>
+            <div class="form-group mb-3 shop">
+
+              <label for="shop">Shop</label>
+              <input id="shop" formControlName="shop" name="shop" type="text" class="form-control validate"
+                required="">
+
+            </div>
+
+            <div class="row">
+              <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                <label for="shipping_fee">Shipping Fee</label>
+                <input id="shipping_fee" formControlName="shipping_fee" name="shipping_fee" type="text" class="form-control validate "
+                  data-large-mode="true">
+
+              </div>
+              <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                <label for="stock">Stock Availability</label>
+                <select formControlName="stock" class="custom-select tm-select-accounts" id="stock">
+                  <option value="" disabled>Stock Availability</option>
+                  <option *ngFor="let stock of stocks" [ngValue]="stock">
+                    {{ stock }}
+                  </option>
+                </select>
+
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            
+
+              <div class="form-group mb-3">
+
+                <label for="name">Product Name</label>
+                <input id="name" name="name" type="text" formControlName="name" class="form-control validate"
+                  required="">
+
+              </div>
+
+              <div class="row">
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="price">Price
+                  </label>
+                  <input id="price" formControlName="price" name="price" type="text" class="form-control validate "
+                    data-large-mode="true">
+
+                </div>
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="colour">Colour</label>
+                  <select formControlName="colour" class="custom-select tm-select-accounts" id="colour">
+                    <option value="" disabled>Choose a Colour</option>
+                    <option *ngFor="let colour of colours" [ngValue]="colour">
+                      {{ colour }}
+                    </option>
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+
+                <label for="product_description">Description</label>
+                <textarea id="product_description" formControlName="product_description" class="form-control validate" rows="3"
+                  required=""></textarea>
+
+              </div>
+
+              
+
+              <div class="row weight">
+                <div class="form-group mb-3 col-xs-12 col-sm-6 ">
+
+                  <label for="weight">Weight (kg)</label>
+                  <input id="weight" formControlName="weight" name="weight" type="text" class="form-control validate "
+                    data-large-mode="true">
+
+                </div>
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="quantity">Units In Stock</label>
+                  <input id="quantity" formControlName="quantity" name="quantity" type="text"
+                    class="form-control validate" required="">
+
+                </div>
+              </div>
+
+              <div class="form-group mb-3 category">
+
+                <label for="category">Category</label>
+                <select formControlName="category" class="custom-select tm-select-accounts" id="category">
+                  <option value="" disabled>Choose a Category</option>
+                  <option *ngFor="let category of categories" [ngValue]="category">
+                    {{ category }}
+                  </option>
+                </select>
+  
+              </div>
+
+            
+          </div>
+          
+          <div class="col-12">
+            <button type="submit" (click)="addProduct()" class="btn btn-primary btn-block text-uppercase">Add Product
+              Now</button>
+          </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

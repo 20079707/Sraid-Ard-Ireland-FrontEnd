@@ -3,3 +3,8 @@
     margin: 0 auto;
     padding: 28px;
 }
+
+h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #253D5B;
+}

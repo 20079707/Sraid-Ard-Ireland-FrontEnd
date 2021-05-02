@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
   selectedProduct?: Product;
+  product!: Product;
 
   constructor(
     private cookieService: CookieService,

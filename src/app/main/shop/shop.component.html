@@ -1,9 +1,25 @@
 <section class="pt-5 pb-5">
-    <div class="container cards cards-hover">
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-4  m-0 p-0" *ngFor="let shop of shops" >
-            <app-shop-item [shopItem]="shop" routerLink="details/{{ shop.business_reg }}"></app-shop-item>
-        </div>
+  <div class="container cards cards-hover">
+
+    <div class="row top">
+      <h2>Shops</h2>
+      <button type="submit" (click)="addShop()" class="btn btn-primary text-uppercase  addshop">Create New Shop</button>
+      
+    </div><br>
+
+
+
+    <div class="row">
+
+      <div class="col-12 mb-4 col-sm-6 col-md-4  m-0 p-0" *ngFor="let shop of shops">
+        <app-shop-item [shopItem]="shop" routerLink="details/{{ shop.id }}"></app-shop-item>
+      </div>
+    </div><br>
+
+    <div class="container-fluid">
+      <div class="col-sm-8 col-md-3 col-md-offset-5">
+
       </div>
     </div>
-  </section>
+  </div>
+</section>

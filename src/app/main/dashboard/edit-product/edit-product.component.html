@@ -1,38 +1,144 @@
+<button (click)="goBack()"><i class="fas fa-angle-left"></i> Go Back</button>
 <div *ngIf="product">
-    <label>Product Name</label><br>
-    <input id="product-name" [(ngModel)]="product.name" placeholder="name"><br>
+  <div class="container tm-mt-big tm-mb-big">
+    <div class="row">
+      <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+        <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
 
-    <label>Price</label><br>
-    <input id="product-price" [(ngModel)]="product.price" placeholder="price"><br>
+          <div class="row">
+            <div class="col-12">
+              <h2 class="tm-block-title d-inline-block">Add Product</h2>
+            </div>
+          </div>
 
-    <label>Description</label><br>
-    <input id="product-description" [(ngModel)]="product.product_description" placeholder="description"><br>
+          <div class="row tm-edit-product-row">
 
-    <label>Quantity of Products</label><br>
-    <input id="product-quantity" [(ngModel)]="product.quantity" placeholder="quantity"><br>
+            <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
 
-    <label>Colour of Product</label><br>
-    <input id="product-colour" [(ngModel)]="product.colour" placeholder="colour"><br>
+              <div class="tm-product-img-dummy mx-auto">
+                <i class="fas fa-cloud-upload-alt tm-upload-icon"
+                  onclick="document.getElementById('fileInput').click();"></i>
+              </div>
 
-    <label>Stock Availability</label><br>
-    <input id="product-stock" [(ngModel)]="product.stock" placeholder="stock"><br>
 
-    <label>Shipping Fee Price</label><br>
-    <input id="product-shipping_fee" [(ngModel)]="product.shipping_fee" placeholder="shipping_fee"><br>
+              <div class="form-group mb-3 shop">
 
-    <label>Weight (kg)</label><br>
-    <input id="product-weight" [(ngModel)]="product.weight" placeholder="weight"><br>
+                <label>Shop</label>
+                <input id="product-shop" [(ngModel)]="product.shop" placeholder="shop" name="shop" type="text" class="form-control validate"
+                required="">
 
-    <label>Shop</label><br>
-    <input id="product-shop" [(ngModel)]="product.shop" placeholder="shop"><br>
+              </div>
 
-    <label>Category</label><br>
-    <input id="product-category" [(ngModel)]="product.category" placeholder="category"><br>
-    
+              <div class="row">
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label>Shipping Fee Price</label><br>
+                  <input id="product-shipping_fee" [(ngModel)]="product.shipping_fee" placeholder="shipping_fee"name="shipping_fee" type="text" class="form-control validate "
+                  data-large-mode="true">
+
+                </div>
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label>Stock Availability</label>
+                  <select [(ngModel)]="product.stock" class="custom-select tm-select-accounts" id="stock">
+                    <option value="" disabled>Stock Availability</option>
+                    <option *ngFor="let stock of stock" [ngValue]="stock">
+                      {{ stock }}
+                    </option>
+                  </select>
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="col-xl-6 col-lg-6 col-md-12">
+
+              <div class="form-group mb-3">
+
+                <label>Product Name</label>
+                <input id="product-name" [(ngModel)]="product.name" placeholder="name" class="form-control validate"
+                  required="">
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label>Price</label>
+                  <input id="product-price" [(ngModel)]="product.price" placeholder="price" name="price" type="text"
+                    class="form-control validate " data-large-mode="true">
+
+                </div>
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label>Colour of Product</label>
+                  <select [(ngModel)]="product.colour" class="custom-select tm-select-accounts" id="colour">
+                    <option value="" disabled>Select Product Colour</option>
+                    <option *ngFor="let colour of colours" [ngValue]="colour">
+                      {{ colour }}
+                    </option>
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+
+                <label>Description</label>
+                <textarea id="product-description" [(ngModel)]="product.product_description" placeholder="description"
+                  class="form-control validate" rows="3"></textarea>
+
+              </div>
+
+              <div class="row weight">
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6 ">
+
+                  <label>Weight (kg)</label>
+                  <input id="product-weight" [(ngModel)]="product.weight" placeholder="weight" name="weight" type="text"
+                    class="form-control validate " data-large-mode="true">
+
+                </div>
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label>Units In Stock</label>
+                  <input id="product-quantity" [(ngModel)]="product.quantity" placeholder="quantity" name="quantity"
+                    type="text" class="form-control validate" required="">
+
+                </div>
+              </div>
+
+              <div class="form-group mb-3 category">
+
+                <label>Category</label>
+                <select [(ngModel)]="product.category" class="custom-select tm-select-accounts" id="category">
+                  <option value="" disabled>Choose a Category</option>
+                  <option *ngFor="let category of categories" [ngValue]="category">
+                    {{ category }}
+                  </option>
+                </select>
+
+              </div>
+
+            </div>
+
+            <div class="col-12">
+              <button type="submit" (click)="saveProduct()" class="btn btn-primary btn-block text-uppercase">Save Changes</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<button type="submit" (click)="saveProduct()">Save Changes</button>
-<button (click)="goBack()">Go Back</button>
 
 
 
-   
+

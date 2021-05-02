@@ -16,24 +16,33 @@
     line-height: inherit;
     text-align: center;
     outline: 0px none !important;
+    color: #C6878F;
 }
 
 button {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
+
+    background-color: #C6878F;
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 25px;
+    letter-spacing: 1px;
+
 }
-.kbFGkD {
-    display: inline-block;
-    padding: 0.9375rem 3.125rem;
-    box-shadow: 0;
-    background: #C6878F;
-    border: 1px solid #C6878F;
-    color: #FFF;
-    -webkit-transition: background ease-in 0.2s, color ease-in 0.2s;
-    transition: background ease-in 0.2s, color ease-in 0.2s;
-    width: 100%;
+
+.login{
+	background-color: #C6878F;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+    width: 450px;
+    margin: 20px auto 0 auto;
 }
 
 .gtdCck {

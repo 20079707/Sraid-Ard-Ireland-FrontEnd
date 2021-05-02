@@ -1,0 +1,31 @@
+.desc, i, a, p {
+    color: #C6878F;
+}
+
+.fas {
+    color: white;
+}
+
+.img {
+    align-self:center;
+    max-height: 500px;
+}
+
+.text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+button, .btn{
+	background-color: #C6878F;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+    width: 170px;
+    
+}

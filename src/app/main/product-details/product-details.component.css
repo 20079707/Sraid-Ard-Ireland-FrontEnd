@@ -44,6 +44,18 @@ img{
     margin: 1rem 0;
     text-decoration: none;
 }
+
+
+button, .btn{
+	background-color: #C6878F;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+}
 .product-title::after{
     content: "";
     position: absolute;
@@ -128,8 +140,8 @@ img{
     text-align: center;
     padding: 0.45rem 0.8rem;
     outline: 0;
-    margin-right: 0.2rem;
-    margin-bottom: 1rem;
+    margin-right: 0.9rem;
+    margin-bottom: 0rem;
 }
 .purchase-info input{
     width: 60px;
@@ -142,7 +154,7 @@ img{
     background: #256eff;
 }
 .purchase-info .btn:last-of-type{
-    background: #f64749;
+    background: #C6878F;
 }
 .purchase-info .btn:hover{
     opacity: 0.9;

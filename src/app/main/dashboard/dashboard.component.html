@@ -1,19 +1,26 @@
 <section>
 
-<div class="container">
-    <h1>My Dashboard <button class="btn" routerLink="add/">Add Product</button></h1>
-    <div class="card-wrapper">
-        <div class="card" *ngFor="let product of products">
-            <!-- card left -->
-            <div class="product-content">
-                <img class="img-fluid image" src="{{product.product_image}}">
-                <div class="product-item">
-                    <h2 class="product-title">{{ product.name }}</h2>
-                    <a class="edit"><button class="btn" routerLink="edit/{{ product.product_code }}">Edit</button></a>
-                    <a class="delete"><button class="btn" (click)="delete(product)">Delete</button></a>
+    <div class="container">
+        <div class="row top">
+            <h1>My Dashboard</h1>
+            <button class="btn" routerLink="add/">Add Product</button>
+        </div><br>
+
+        <div class="card-wrapper">
+            <div class="card" *ngFor="let product of products">
+                <!-- card left -->
+                <div class="product-content">
+                    <img class="img-fluid image" src="{{product.product_image}}">
+                    <div class="product-item">
+                        <h2 class="product-title">{{ product.name }}</h2>
+
+                        <a class="edit"><button class="btn"
+                                routerLink="edit/{{ product.product_code }}">Edit</button></a>
+                        <a class="delete"><button class="btn" (click)="delete(product)">Delete</button></a>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </section>

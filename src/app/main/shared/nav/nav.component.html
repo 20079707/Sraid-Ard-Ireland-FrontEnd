@@ -21,20 +21,19 @@
           <a class="nav-link" href="#" routerLink="department">Departments</a>
         </li>
         <li class="nav-item mr-3">
-          <a class="nav-link" href="#" routerLink="cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+          <a class="nav-link" href="#" routerLink="cart"> Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user-circle"></i>  John Doe  <i class="fa fa-angle-down   "></i>
+            <i class="fas fa-user-circle"></i>  My Account  <i class="fa fa-angle-down   "></i>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#" routerLink="dashboard">Dashboard</a>
-            <a class="dropdown-item" href="#">Account Settings</a>
-            <a class="dropdown-item" href="#">Newsletter</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" (click)="logout()">Sign Out</a>
+            <a *ngIf="!signedIn" class="dropdown-item" href="#" (click)="loginUser()">Sign In</a>
           </div>
         </li>
       </ul>

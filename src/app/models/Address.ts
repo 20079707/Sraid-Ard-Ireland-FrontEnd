@@ -1,4 +1,4 @@
-export interface Address {
+export interface Address { //address model
     address_line1: string;
     address_line2: string;
     county: string;

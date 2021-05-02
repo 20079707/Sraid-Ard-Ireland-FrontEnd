@@ -1,2 +1,82 @@
-<img src="{{shop.logo}}">
-<h1>{{shop.shop_name}}</h1>
+<div class="">
+    <div class="container  ">
+
+        <div class="row   justify-content-center header-h100  d-flex  ">
+            <div class="col-md-10  shadow align-self-center card p-12 bg-light text-dark pt-4 pb-4">
+                <img src="{{shop.logo}}" class="img-center img">
+                <div class="text-center">
+                    <h1>{{shop.shop_name}}</h1><br>
+                    <h5>{{ shop.slogan }}</h5><br>
+
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row text-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-8">
+                <div class="row">
+                    <div class="form-group mb-3 col-xs-8 col-sm-6">
+                        <button (click)="products()">Product Range</button>
+                    </div>
+                    <div class="form-group mb-3 col-xs-8 col-sm-6">
+                        <button>Call Us <i class="fas fa-phone"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><br>
+
+        <div class="row text-center">
+
+            <div class="col-xl-8 col-lg-6 col-md-12 mx-auto mb-8">
+                <h3><strong>About Us</strong></h3>
+                <p class="desc">{{ shop.description }}</p><br>
+
+
+
+                <div class="row">
+                    <div class="form-group mb-3 col-xs-10 col-sm-12">
+                        <h3><strong>Contact/Vist Us</strong></h3>
+                        <p>
+                            {{ shop.address_line1 }}<br>
+                            {{ shop.address_line2 }}<br>
+                            {{ shop.town_city }}<br>
+                            {{ shop.county }}<br>
+                            {{ shop.eir_code }}
+                        </p>
+                        <p>{{ shop.phone_no }}</p>
+                        <p>
+                            <a href="#">infob@bootstraptor.com</a>
+                        </p>
+                    </div>
+
+                    
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-12 mx-auto mb-8">
+                        <a href="#" role="button" class="  p-2 m-2  ">
+                            <i class="fab fa-twitter fa-lg   " aria-hidden="true"></i>
+                        </a>
+                        <a href="#" role="button" class="  p-2 m-2  ">
+                            <i class="fab fa-facebook fa-lg  " aria-hidden="true"></i>
+                        </a>
+                        <a href="#" role="button" class="  p-2 m-2  ">
+                            <i class="fab fa-linkedin fa-lg  " aria-hidden="true"></i>
+                        </a>
+                        <a href="#" role="button" class="  p-2 m-2  ">
+                            <i class="fab fa-google-plus fa-lg  " aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</div>

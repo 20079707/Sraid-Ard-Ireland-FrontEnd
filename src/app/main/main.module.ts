@@ -26,16 +26,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './dashboard/add-product/add-product.component';
 import { EditProductComponent } from './dashboard/edit-product/edit-product.component';
+import { CategoryfilterPipe } from './../categoryfilter.pipe';
+import { AddShopComponent } from './add-shop/add-shop.component';
 
-const routes: Routes = [
+const routes: Routes = [  // some required routes in this module
   { path: 'department', component: DepartmentComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'dashboard', component: DashboardComponent },
   
   
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [ // all component declared in this module
     MainComponent,
     ProductListComponent,
     ProductDetailsComponent,
@@ -57,19 +60,21 @@ const routes: Routes = [
     DashboardComponent,
     AddProductComponent,
     EditProductComponent,
+    CategoryfilterPipe,
+    AddShopComponent
 
 
   ],
-  imports: [
+  imports: [  // imports from app module
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     FormsModule,
   ],
-  exports: [
+  exports: [  // export router to components in module
     RouterModule,
   ],
-  providers: [
+  providers: [  // makes api service available to any cmponent in this module
     ApiService
   ]
 })

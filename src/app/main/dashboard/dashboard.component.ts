@@ -42,7 +42,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  
+  edit(product_code: number) {
+    this.router.navigate(['/edit', product_code])
+  }
 
   delete(product: Product): void {
     this.products = this.products.filter(h => h !== product);

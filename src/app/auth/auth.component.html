@@ -24,16 +24,18 @@
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" formControlName="password" id="inputPassword" font-size="[object Object]" placeholder="Password" font-family="BrownStd-Regular" name="PasswordSignIn" autocomplete="" class="sc-bdVaJa sc-htpNat lmkx99-0 gtdCck sc-1i5h52x-0 eiTnBu" data-validation-empty="Please enter your password." data-validation-format="This password is not valid. Please ensure there are no spaces or invalid characters in your email address." data-validation-registeremail="" aria-required="true">
 
-          <button type="submit" name="login" width="100%" class="eexz8h-1 kbFGkD">
+          <button type="submit" name="login" width="100%" class="eexz8h-1 login">
             <span *ngIf="!registerMode" font-size="[object Object]" font-family="BrownStd-Regular" letter-spacing="1px" display="flex" class="sc-bdVaJa sc-htpNat sc-1i5h52x-0 lgWUVA">LOG IN</span>
             <span *ngIf="registerMode" font-size="[object Object]" font-family="BrownStd-Regular" letter-spacing="1px" display="flex" class="sc-bdVaJa sc-htpNat sc-1i5h52x-0 lgWUVA">REGISTER</span>
           </button>
           
           
-          <a *ngIf="!registerMode" class="mt-6 mb-3 register-button btn-flat" data-capturescreen="traditionalRegistration" (click)="registerMode = true">No account? Register here</a>
-          <a *ngIf="registerMode" class="mt-6 mb-3 register-button btn-flat" data-capturescreen="traditionalRegistration" (click)="registerMode = false">Have an account? Login here</a>
+          <button *ngIf="!registerMode" class="btn-flat mt-4 " data-capturescreen="traditionalRegistration" (click)="registerMode = true">No account? Register here</button>
+          <button *ngIf="registerMode" class="btn-flat mt-4" data-capturescreen="traditionalRegistration" (click)="registerMode = false">Have an account? Login here</button><br>
 
-          <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+
+
+          <p class="mt-4 mb-3 text-muted">© 2020-2021</p>
 
         </form>
       </div>

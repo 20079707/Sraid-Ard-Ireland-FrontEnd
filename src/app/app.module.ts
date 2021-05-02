@@ -8,22 +8,23 @@ import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryfilterPipe } from './categoryfilter.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingCartComponent,
   ],
+
+  // all app impoorts
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AuthModule,
+    AuthModule, // auth module
     HttpClientModule,
-    MainModule,
+    MainModule, // main module
     MatToolbarModule,
     MatSidenavModule,
     FlexLayoutModule,
@@ -35,7 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatSidenavModule,
     FlexLayoutModule,
-    AppRoutingModule,
+    AppRoutingModule, // exporting app routing module
   ],
   providers: [],
   bootstrap: [AppComponent]

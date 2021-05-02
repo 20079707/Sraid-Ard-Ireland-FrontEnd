@@ -24,6 +24,10 @@ export class ShopComponent implements OnInit {
     this.getShops()
   }
 
+  addShop() {
+    this.router.navigate(['/main/add-shop'])
+  }
+
   getShops() {
     const urToken = this.cookieService.get('ur-token')
     if (!urToken) {

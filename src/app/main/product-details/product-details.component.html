@@ -1,89 +1,77 @@
+<div class="container">
+  <div class="row">
+    <button (click)="goBack()"><i class="fas fa-angle-left"></i> Go Back</button>
+  </div>
+</div><br>
+<div class="card-wrapper">
 
-<div class = "card-wrapper">
-    <div class = "card">
-      <!-- card left -->
-      <div class = "product-imgs">
-        <div class = "img-display">
-          <div class = "img-showcase">
-            <img src="{{ product.product_image }}" alt = "bad image">
-          </div>
-        </div>
-        <div class = "img-select">
-          <div class = "img-item">
-            <a href = "#" data-id = "1">
-                <img src="{{ product.product_image }}" alt = "shoe image">
-            </a>
-          </div>
-          <div class = "img-item">
-            <a href = "#" data-id = "2">
-                <img src="{{ product.product_image }}" alt = "bad image">
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- card right -->
-      <div class = "product-content">
-        <h2 class = "product-title">{{ product.name }}</h2>
-        
-        <div class = "product-rating">
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star"></i>
-          <i class = "fas fa-star-half-alt"></i>
-          <span>4.7(21)</span>
-        </div>
-
-        <div class = "product-price">
-          <p>{{ product.price | currency:"EUR" }}</p>
-        </div>
-
-        
-        <h5 class="mt-4 text-left">Description</h5>
-
-          <div class = "description">
-            <p>{{ product.product_description }}</p>
-          </div>
-
-          <div class = "product-detail">
-          <ul>
-            <li>Color: <span>{{ product.colour }}</span></li>
-            <li>Available: <span>{{ product.stock }}</span></li>
-            <li>Category: <span>{{ product.category }}</span></li>
-            <li>Shipping Area: <span>All over the world</span></li>
-            <li>Shipping Fee: <span>{{ product.shipping_fee }}</span></li>
-          </ul>
-        </div>
-
-        <div class = "purchase-info">
-          <input type = "number" min = "0" value = "1">
-          <button type = "button" class = "btn">
-            Add to Cart <i class = "fas fa-shopping-cart"></i>
-          </button>
-          <button type = "button" class = "btn">Compare</button>
-        </div>
-
-        <div class = "social-links">
-          <p>Share At: </p>
-          <a href = "#">
-            <i class = "fab fa-facebook-f"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-twitter"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-instagram"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-whatsapp"></i>
-          </a>
-          <a href = "#">
-            <i class = "fab fa-pinterest"></i>
-          </a>
+  <div class="card">
+    <!-- card left -->
+    <div class="product-imgs">
+      <div class="img-display">
+        <div class="img-showcase">
+          <img src="{{ product.product_image }}" alt="bad image">
         </div>
       </div>
     </div>
+    <!-- card right -->
+    <div class="product-content">
+      <h2 class="product-title">{{ product.name }}</h2>
+
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>4.7(21)</span>
+      </div>
+
+      <div class="product-price">
+        <p>{{ product.price | currency:"EUR" }}</p>
+      </div>
+
+
+      <h5 class="mt-4 text-left">Description</h5>
+
+      <div class="description">
+        <p>{{ product.product_description }}</p>
+      </div>
+
+      <div class="product-detail">
+        <ul>
+          <li>Color: <span>{{ product.colour }}</span></li>
+          <li>Available: <span>{{ product.stock }}</span></li>
+          <li>Category: <span>{{ product.category }}</span></li>
+          <li>Shipping Area: <span>All over the world</span></li>
+          <li>Shipping Fee: <span>{{ product.shipping_fee }}</span></li>
+        </ul>
+      </div>
+
+      <div class="purchase-info">
+        <input type="number" min="0" value="1">
+        <button type="button" class="btn" (click)="handleAddToCart()">Add to Cart <i
+            class="fas fa-shopping-cart"></i></button>
+      </div>
+
+      <div class="social-links">
+        <p>Share At: </p>
+        <a href="#"><br>
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </div>
+    </div>
   </div>
-
-  
-
+</div>

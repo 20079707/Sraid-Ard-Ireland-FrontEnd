@@ -1,0 +1,138 @@
+<button (click)="goBack()"><i class="fas fa-angle-left"></i> Go Back</button>
+
+<div class="container tm-mt-big tm-mb-big">
+  <div class="row">
+    <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+      <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+
+        <div class="row">
+          <div class="col-12">
+            <h2 class="tm-block-title d-inline-block">Add New Shop</h2>
+          </div>
+        </div>
+
+        
+      <form [formGroup]="shopForm" class="tm-edit-product-form">  <!-- form grop linked to typescript file --> 
+        <div class="row tm-edit-product-row">
+
+          <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+            <img [src]="imageURL" style="width: 300px; height: 200px">
+
+            <div class="custom-file mt-3 mb-3">
+
+              <input id="fileInput" type="file" style="display:none;" (change)="uploadDocument($event)" accept=".png, .pdf, .jpg, .jpeg">
+
+              <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD SHOP IMAGE"
+                onclick="document.getElementById('fileInput').click();" >
+                
+            </div>
+
+            
+          </div>
+
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            
+
+              <div class="form-group mb-3">
+
+                <label for="shop_name">Shop Name</label>
+                <input id="shop_name" name="shop_name" type="text" formControlName="shop_name" class="form-control validate"
+                  required="">
+
+              </div>
+
+              <div class="row">
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="slogan">Slogan</label>
+                  <input id="slogan" formControlName="slogan" name="slogan" type="text" class="form-control validate "
+                    data-large-mode="true">
+
+                </div>
+
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                    <label for="business_reg">Business Registration</label>
+                    <input id="business_reg" formControlName="business_reg" name="business_reg" type="text" class="form-control validate "
+                      data-large-mode="true">
+
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+
+                <label for="description">Description</label>
+                <textarea id="description" formControlName="description" class="form-control validate" rows="3"
+                  required=""></textarea>
+
+              </div>
+
+              
+
+              <div class="row weight">
+                <div class="form-group mb-3 col-xs-12 col-sm-6 ">
+
+                  <label for="address_line1">Address Line 1</label>
+                  <input id="address_line1" formControlName="address_line1" name="address_line1" type="text" class="form-control validate "
+                    data-large-mode="true">
+
+                </div>
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="address_line2">Address Line 2</label>
+                  <input id="address_line2" formControlName="address_line2" name="address_line2" type="text"
+                    class="form-control validate" required="">
+
+                </div>
+              </div>
+
+              <div class="row weight">
+                <div class="form-group mb-3 col-xs-12 col-sm-6 ">
+
+                  <label for="town_city">Town/City</label>
+                  <input id="town_city" formControlName="town_city" name="town_city" type="text" class="form-control validate "
+                    data-large-mode="true">
+
+                </div>
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="county">County</label>
+                  <input id="county" formControlName="county" name="county" type="text"
+                    class="form-control validate" required="">
+
+                </div>
+              </div>
+
+              <div class="row weight">
+                <div class="form-group mb-3 col-xs-12 col-sm-6 ">
+
+                  <label for="eir_code">Eircode</label>
+                  <input id="eir_code" formControlName="eir_code" name="eir_code" type="text" class="form-control validate "
+                    data-large-mode="true">
+
+                </div>
+                <div class="form-group mb-3 col-xs-12 col-sm-6">
+
+                  <label for="phone_no">Phone Number</label>
+                  <input id="phone_no" formControlName="phone_no" name="phone_no" type="text"
+                    class="form-control validate" required="">
+
+                </div>
+              </div>
+
+             
+
+            
+          </div>
+          
+          <div class="col-12">
+            <button type="submit" (click)="addProduct()" class="btn btn-primary btn-block text-uppercase">Save Shop
+              Now</button>
+          </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

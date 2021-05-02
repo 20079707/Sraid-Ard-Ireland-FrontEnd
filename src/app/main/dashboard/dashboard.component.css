@@ -18,10 +18,15 @@ img {
     float: left;
     height: 200px;
     object-fit:contain;
+    padding-right: 15px;
 }
 
-h1 {
-    padding: 16px;
+
+
+.top {
+	display: flex;
+  justify-content: space-between;
+
 }
 
 a{

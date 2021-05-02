@@ -1,11 +1,7 @@
-<div class="card shadow card-default  text-center h-100">
-  <div class="card-img-top">
-    <img alt="image" class="img-fluid mx-auto d-block image" src="{{ productItem.product_image }}">
-  </div>
-  <div class=" card-body p-md-2 ">
-    <h4 class="card-title">
-      <a href="javascript:void(0)" class=" font-weight-bold text-dark text-uppercase small"> {{ productItem.name }}</a>
-    </h4>
+<div class="card" >
+  <img src="{{ productItem.product_image }}" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>{{ productItem.name }}</b></h4>
     <p>{{ productItem.price | currency:"EUR" }}</p>
   </div>
 </div>

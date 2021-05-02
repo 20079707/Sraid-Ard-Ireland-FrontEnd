@@ -1,4 +1,4 @@
-export interface Category {
+export interface Category { //category model
     id: number;
     name: string;
     category_description: string;

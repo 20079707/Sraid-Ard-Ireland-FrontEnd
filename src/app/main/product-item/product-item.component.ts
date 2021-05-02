@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../models/Product';
+import { MessengerService } from '../../messenger.service';
+
 
 @Component({
   selector: 'app-product-item',

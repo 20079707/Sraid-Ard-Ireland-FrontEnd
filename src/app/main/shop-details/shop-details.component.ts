@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Shop } from 'src/app/models/Shop';
 
@@ -15,6 +15,8 @@ export class ShopDetailsComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
+    private router: Router,
+
   ) { }
 
   ngOnInit(): void {
@@ -22,9 +24,12 @@ export class ShopDetailsComponent implements OnInit {
   }
 
   getShop(): void {
-    const business_reg = String(this.route.snapshot.paramMap.get('business_reg'));
-    this.apiService.getShop(business_reg)
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.apiService.getShop(id)
       .subscribe(shop => this.shop = shop);
   }
 
+  products() {
+    this.router.navigate(['main/products']);
+  }
 }

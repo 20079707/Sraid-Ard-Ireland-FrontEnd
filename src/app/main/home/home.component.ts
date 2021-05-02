@@ -14,7 +14,11 @@ import { Product } from 'src/app/models/Product';
 export class HomeComponent implements OnInit {
 
 
-
+  browse_products: string = "/assets/img/Browse_Products.png";
+  browse_shops: string = "/assets/img/Browse_Shop.png";
+  iMow: string = "/assets/img/iMow.jpg";
+  hot_cross_buns: string = "/assets/img/HotCrossBuns.jpg";
+  pork_chop: string = "/assets/img/porkchop.jpg";
   selectedProduct = null;
 
   constructor(
@@ -23,7 +27,14 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const urToken = this.cookieService.get('ur-token')
+    if (!urToken) {
+      this.router.navigate(['/auth']);
+    } else {
+      this.router.navigate(['main/home']);
+    }
+  }
 
   
 }

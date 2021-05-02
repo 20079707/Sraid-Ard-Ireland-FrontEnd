@@ -1,0 +1,19 @@
+button{
+	background-color: #C6878F;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+
+}
+
+.top {
+	display: flex;
+  justify-content: space-between;
+
+}
+
+

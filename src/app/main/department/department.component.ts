@@ -31,11 +31,11 @@ export class DepartmentComponent implements OnInit {
 
       this.apiService.getCategories().subscribe(
         data => {
-        this.categories = data;
-      },
+          this.categories = data;
+        },
         error => console.log(error)
 
-    );
+      );
     }
   }
 

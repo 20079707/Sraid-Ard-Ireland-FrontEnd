@@ -1,7 +1,7 @@
 import { Shop } from './Shop'
 import { Category } from './Category';
 
-export interface Product {
+export interface Product {  //product model
     product_code: number;
     name: string;
     price: string;
